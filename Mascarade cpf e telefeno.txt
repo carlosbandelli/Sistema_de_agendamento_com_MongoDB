@@ -1,0 +1,22 @@
+Mascara de arquivos
+Biblioteca
+Jquery-Mask-Plugin
+arquivo para coloca no public:
+
+jquery.mask.min
+
+Importar para o html
+
+<script src="jquery.mask.min.js"></script>
+ não se esquece de importar o jquery tambem:
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+Código inteiro:
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script><---bootstrap
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><--jquery
+<script src="jquery.mask.min.js"></script> <--mask
+<script>
+    $('.cpf').mask('000.000.000-00');
+</script>
+</html> <--entre o HTML
