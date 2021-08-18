@@ -1,0 +1,9 @@
+O que importamos para a pasta public?
+
+Colocamos a pasta lib do full calendar e a pasta dist do jquery-mask-plugin
+
+Variaveis de ambiente do mongo
+
+adicionamos o caminho
+
+C:\Program Files\MongoDB\Server\5.0\bin

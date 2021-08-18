@@ -1,0 +1,22 @@
+comandos para usar mongo
+vá ai cmd
+digite mongo
+show dbs
+use escolhe o banco de dados
+show collections
+db.coleção que voce vai usar.find()
+
+Exemplo
+> show dbs <----comando
+admin            0.000GB
+agendamento      0.000GB
+aprendendoMongo  0.000GB
+config           0.000GB
+local            0.000GB
+> use agendamento <---- comando
+switched to db agendamento
+> show collections <---- comando
+appointments
+> db.appointments.find() <----- comando
+{ "_id" : ObjectId("611c2d1be5e13925845a75f9"), "name" : "", "email" : "", "description" : "", "cpf" : "", "date" : null, "finished" : false, "__v" : 0 }
+

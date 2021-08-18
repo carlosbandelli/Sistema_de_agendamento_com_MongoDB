@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> <---- bootstrap
+</head>
+<body>
+    <h1>Cadastro de consulta</h1>
+    <hr>
+    <form method="POST" action="create">
+        <input type="text" name="name" id="name" placeholder="Nome do paciente" class="form-control">
+        <input type="email" name="email" id="email" placeholder="email@email.com" class="form-control">
+        <input type="text" name="cpf" id="cpf" placeholder="CPF" class="form-control cpf">
+        <input type="date" name="date" id="date"  placeholder="12/02/2089" class="form-control">
+        <input type="time" name="time" id="time" class="form-control">
+        <input type="text" name="description" id="description" placeholder="descrição" class="form-control">
+        <div class="d-grid gap-2" >
+            <button class= "btn btn-success btn-block ">Agendar</button>
+        </div>
+        
+    </form>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> <---- bootstrap
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <--- jquery sendo usado
+<script src="jquery.mask.min.js"></script> <--- mascara sendo usado
+<script>
+    $('.cpf').mask('000.000.000-00'); <--- função mask sendo usado
+</script>
+</html>

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const appointment = new mongoose.Schema({
     name: String,
@@ -7,8 +7,8 @@ const appointment = new mongoose.Schema({
     cpf: String,
     date: Date,
     time: String,
-    finished: Boolean
+    finished: Boolean,
+    
+});
 
-})
-
-module.exports = appointment
+module.exports = appointment;
