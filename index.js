@@ -12,6 +12,7 @@ app.use(express.json());
 app.set('view engine','ejs');
 
 mongoose.connect("mongodb://localhost:27017/agendamento",{useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.set('useFindAndModify', false)
 
 app.get("/", (req, res) => {
     res.render("index");
@@ -48,6 +49,25 @@ app.get("/event/:id",async (req,res)=> {
     var appointment = await appointmentService.GetById(req.params.id)
     console.log(appointment)
     res.render("event",{appo: appointment})
+})
+
+app.post("/finish", async (req, res)=> {
+    var id = req.body.id
+    var result = await AppointmentService.Finish(id)
+    res.redirect("/")
+})
+
+app.get("/list", async (req,res) => {
+
+    
+
+    var appos = await AppointmentService.GetAll(true)
+    res.render("list",{appos})
+})
+
+app.get("/searchresult", async(req, res) => {
+    var appos = await AppointmentService.Search(req.query.search)
+    res.render("list",{appos})
 })
 
 app.listen(8080, () => {
