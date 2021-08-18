@@ -1,0 +1,17 @@
+Padrão de projeto Factory
+
+Basicamente voce vai passar dados para um classe e essa classe vai ser um fabrica
+ou seja
+Voce vai passar um material para ela, voce vai passar dados para e essa clasee vai retornar
+um novo material para voce.
+
+Vamos supor que eu estou desenvolcendo um E-comerce e eu tenho uma classe chamada:
+
+CartFactory.Build(produtos, endereço) a responsabilidade dessa classe como ela é uma fabrica
+ela vai pegar a materia-prima qeu são esse dois dados e vai produzir para nos um objeto final
+que seria um shoppingCart, e dentro do shoppingCart voce vai ter campos como
+Produtos , endereço, totla o subtotal, desconto, custo do frete, numero de produtos
+
+O padrão de projeto Factory ele funcioan dessa maneira, vocÊ vai ter uma classe, vai te rum metodo de construção
+voce vai passar os valores que são necessarios, e essa clasee factory vai ser responsavel, para devolver para voce
+um objeto novo
