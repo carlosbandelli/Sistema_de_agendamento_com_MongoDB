@@ -70,6 +70,15 @@ app.get("/searchresult", async(req, res) => {
     res.render("list",{appos})
 })
 
+var pollTime = 2000
+
+setInterval(async () => {
+
+    await AppointmentService.SendNotification()
+    
+
+},pollTime)
+
 app.listen(8080, () => {
     console.log("Calendario funcionando!")
 });

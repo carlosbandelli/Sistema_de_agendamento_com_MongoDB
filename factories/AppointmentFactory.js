@@ -20,6 +20,8 @@ class AppointmentFactory{
             title: simpleAppointment.name + " - " + simpleAppointment.description, 
             start: startDate,
             end: endDate,
+            notified: simpleAppointment.notified,
+            email: simpleAppointment.email
            
         }
         

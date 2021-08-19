@@ -1,0 +1,15 @@
+aula - 365
+Task
+
+Deleção de arquviso do banco de dados
+exemplo
+db.appointments.remove({})
+
+mailtrap
+Serviço de email para teste
+
+Padrão que deve ser seguido no nodemailer
+
+from:"Carlos Bandelli<carlos@bandelli.com.br>" <----para configuração de email
+
+

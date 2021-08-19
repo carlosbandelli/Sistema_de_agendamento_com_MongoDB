@@ -1,6 +1,7 @@
 var appointment = require("../models/Appointment")
 var mongoose = require("mongoose")
 var AppointmentFactory = require("../factories/AppointmentFactory")
+var mailer = require("nodemailer")
 
 const Appo = mongoose.model("Appointment", appointment)
 
@@ -14,6 +15,7 @@ class AppointmentService{
                 date,
                 time,
                 finished: false,
+                notified: false
         })
 
         try{
@@ -69,6 +71,46 @@ class AppointmentService{
             console.log(err)
             return []
         }       
+    }
+
+    async SendNotification(){
+        var appos = await this.GetAll(false)
+
+        var transporter = mailer.createTransport({
+            host: "smtp.mailtrap.io",
+            port: 2525,
+            auth: {
+                user: "8b70b5345a0f91",
+                pass: "3ef17dccc6853c",
+            }
+        })
+
+        appos.forEach(async app => {
+
+            var date = app.start.getTime()
+            var hour = 1000 * 60 * 60// se quiser mulplicar por só colocar *2 
+            var gap = date-Date.now()
+
+            if(gap <= hour){                
+                
+                if(!app.notified){
+
+                    await Appo.findByIdAndUpdate(app.id,{notified: true})
+                    
+                    transporter.sendMail({
+                        from: "Carlos Bandelli <carlos@bandelli.com.br>",
+                        to: app.email,
+                        subject: "Sua consulta vai acontecer em breve! ",
+                        text: "Conteúdo qualquer!!! Sua consulta vai acontecer em 1h"
+                    }).then( () => {
+
+                    }).catch(err => {
+                        console.log(err)
+                    })
+
+                }                
+            }
+        })
     }
 }
 
